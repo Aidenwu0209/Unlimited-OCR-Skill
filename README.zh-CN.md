@@ -11,6 +11,20 @@
 
 ## 在主流 Agent 中安装
 
+### 一段 Prompt 安装（最简单）
+
+把下面整段复制给 Codex、Claude Code、Cursor、OpenCode、OpenClaw，或其他可以操作终端的 AI Agent：
+
+```text
+请在这台电脑上安装 https://github.com/Aidenwu0209/Unlimited-OCR-Skill 中的 unlimited-ocr-document-parsing。
+1. 识别当前支持的 Agent，并检查 Node.js/npx、Python 3.9+ 和 uv。如果缺少依赖，先解释用途并只使用官方安装方式；未经我允许不要使用 sudo 或修改无关系统设置。
+2. 如果当前是 OpenClaw，优先执行：openclaw skills install @aidenwu0209/unlimited-ocr-document-parsing
+3. 其他 Agent 执行：npx skills add Aidenwu0209/Unlimited-OCR-Skill --skill unlimited-ocr-document-parsing -g -y
+4. 通过对应平台的 Skill 列表确认安装结果，并告诉我 Skill 名称和安装路径。
+5. 不要编造、显示或记录百度云或本地服务的任何 API Key。在服务模式配置处停下来，解释百度智能云与本地服务两种选择，展示 Skill 文档中的官方链接，并列出仍需由我提供的配置值。
+6. 汇报实际执行的命令和验证结果。
+```
+
 本仓库遵循开放的 [Agent Skills](https://agentskills.io) 目录规范。`skills` CLI 能发现并安装到 Codex、Claude Code、Cursor、OpenCode、OpenClaw 等兼容客户端：
 
 ```bash

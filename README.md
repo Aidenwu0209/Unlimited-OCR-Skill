@@ -11,6 +11,21 @@ A portable Agent Skill for long-document OCR and structured Markdown extraction 
 
 ## Install on supported agents
 
+### One-prompt installation (easiest)
+
+Copy the entire prompt below into Codex, Claude Code, Cursor, OpenCode, OpenClaw,
+or another AI agent that can operate a terminal:
+
+```text
+Install unlimited-ocr-document-parsing from https://github.com/Aidenwu0209/Unlimited-OCR-Skill on this computer.
+1. Detect the current supported agent and check Node.js/npx, Python 3.9+, and uv. If something is missing, explain it and use its official installer. Do not use sudo or change unrelated system settings without my permission.
+2. If this is OpenClaw, prefer: openclaw skills install @aidenwu0209/unlimited-ocr-document-parsing
+3. For another agent, run: npx skills add Aidenwu0209/Unlimited-OCR-Skill --skill unlimited-ocr-document-parsing -g -y
+4. Verify the installation with the platform's skill list, and confirm the skill name and install path.
+5. Do not invent, expose, or log any Baidu or local-service API key. Stop at provider configuration, explain the Baidu Cloud and local-server choices, show the official links from the skill documentation, and list the values I still need to supply.
+6. Report the commands used and the verification result.
+```
+
 The repository follows the open [Agent Skills](https://agentskills.io) layout. The `skills` CLI can discover and install it for Codex, Claude Code, Cursor, OpenCode, OpenClaw, and many other compatible agents:
 
 ```bash
