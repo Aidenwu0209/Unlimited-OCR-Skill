@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "unlimited-ocr-skill",
+  "displayName": "Unlimited OCR Skill",
+  "version": "1.0.0",
+  "description": "Long-document OCR and structured parsing through Baidu Unlimited-OCR cloud API or a local OpenAI-compatible server.",
+  "author": {
+    "name": "Aidenwu0209",
+    "url": "https://github.com/Aidenwu0209"
+  },
+  "homepage": "https://github.com/baidu/Unlimited-OCR",
+  "repository": "https://github.com/Aidenwu0209/Unlimited-OCR-Skill",
+  "license": "Apache-2.0",
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "ocr",
+    "unlimited-ocr",
+    "document-parsing",
+    "baidu"
+  ]
+}
+
