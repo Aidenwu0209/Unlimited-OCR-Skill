@@ -1,6 +1,64 @@
 ---
 name: unlimited-ocr-document-parsing
 description: Parse long images, PDFs, OFD, Office documents, and text files into complete Markdown with Baidu Unlimited-OCR cloud API, or parse local images/PDFs through an SGLang/OpenAI-compatible server. Use for long-document OCR, tables, formulas, reading order, and structured document extraction.
+license: MIT-0
+compatibility: Requires Python 3.9+, uv, and network access to Baidu Cloud or a configured SGLang/OpenAI-compatible Unlimited-OCR service.
+metadata:
+  author: Aidenwu0209
+  repository: https://github.com/Aidenwu0209/Unlimited-OCR-Skill
+  version: "1.1.0"
+  openclaw:
+    requires:
+      bins:
+        - uv
+    envVars:
+      - name: UNLIMITED_OCR_PROVIDER
+        required: false
+        description: Select baidu or local; defaults to baidu.
+      - name: UNLIMITED_OCR_API_KEY
+        required: false
+        description: Baidu OCR application API Key.
+      - name: UNLIMITED_OCR_SECRET_KEY
+        required: false
+        description: Baidu OCR application Secret Key.
+      - name: UNLIMITED_OCR_ACCESS_TOKEN
+        required: false
+        description: Existing Baidu OAuth access token alternative.
+      - name: UNLIMITED_OCR_LOCAL_BASE_URL
+        required: false
+        description: HTTPS or loopback HTTP URL of the local model service.
+      - name: UNLIMITED_OCR_LOCAL_BACKEND
+        required: false
+        description: Select sglang or openai for local mode.
+      - name: UNLIMITED_OCR_MODEL
+        required: false
+        description: Served model name; defaults to Unlimited-OCR.
+      - name: UNLIMITED_OCR_LOCAL_API_KEY
+        required: false
+        description: Optional bearer token for the local model service.
+      - name: UNLIMITED_OCR_TIMEOUT
+        required: false
+        description: Operation timeout in seconds.
+      - name: UNLIMITED_OCR_POLL_INTERVAL
+        required: false
+        description: Baidu asynchronous task polling interval in seconds.
+      - name: UNLIMITED_OCR_PDF_DPI
+        required: false
+        description: PDF rendering DPI for local mode.
+      - name: UNLIMITED_OCR_LOCAL_MAX_PAGES
+        required: false
+        description: Maximum number of PDF pages in local mode.
+      - name: UNLIMITED_OCR_OAUTH_URL
+        required: false
+        description: Advanced override for the Baidu OAuth endpoint.
+      - name: UNLIMITED_OCR_SUBMIT_URL
+        required: false
+        description: Advanced override for the Baidu task submission endpoint.
+      - name: UNLIMITED_OCR_QUERY_URL
+        required: false
+        description: Advanced override for the Baidu task query endpoint.
+    emoji: "📄"
+    homepage: https://github.com/Aidenwu0209/Unlimited-OCR-Skill
 ---
 
 # Unlimited-OCR document parsing
@@ -53,4 +111,3 @@ See `references/output_schema.md` for the full stable envelope.
 - Model and local deployment: https://github.com/baidu/Unlimited-OCR
 - Cloud API: https://ai.baidu.com/ai-doc/OCR/fmr1p39gb
 - Authentication: https://cloud.baidu.com/doc/AI_REFERENCE/s/um3zhy50e
-
