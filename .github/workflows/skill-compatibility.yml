@@ -35,8 +35,10 @@ jobs:
           npx -y clawhub@0.23.3 skill publish
           ./skills/unlimited-ocr-document-parsing
           --slug unlimited-ocr-document-parsing
-          --name "Unlimited-OCR Document Parsing"
-          --version 1.1.0 --dry-run --json
+          --name "Unlimited-OCR PDF & Document Parsing"
+          --version 1.1.1
+          --topics unlimited-ocr,ocr,document-parsing,pdf-to-markdown,long-document
+          --dry-run --json
 
       - name: Run offline OCR smoke tests
         run: |
@@ -47,4 +49,3 @@ jobs:
         run: |
           node -e "JSON.parse(require('fs').readFileSync('.claude-plugin/plugin.json'))"
           node -e "JSON.parse(require('fs').readFileSync('.claude-plugin/marketplace.json'))"
-

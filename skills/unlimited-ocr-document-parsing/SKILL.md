@@ -1,12 +1,13 @@
 ---
 name: unlimited-ocr-document-parsing
-description: Parse long images, PDFs, OFD, Office documents, and text files into complete Markdown with Baidu Unlimited-OCR cloud API, or parse local images/PDFs through an SGLang/OpenAI-compatible server. Use for long-document OCR, tables, formulas, reading order, and structured document extraction.
+description: >-
+  Convert long documents to complete Markdown with Unlimited-OCR. Supports images, scanned PDFs, OFD, Office and text files through Baidu Cloud, plus local image/PDF inference through SGLang or an OpenAI-compatible server. Use for OCR, PDF-to-Markdown, Chinese/CJK text, tables, formulas, reading order, multi-page scans, invoices, reports, papers, and structured document extraction.
 license: MIT-0
 compatibility: Requires Python 3.9+, uv, and network access to Baidu Cloud or a configured SGLang/OpenAI-compatible Unlimited-OCR service.
 metadata:
   author: Aidenwu0209
   repository: https://github.com/Aidenwu0209/Unlimited-OCR-Skill
-  version: "1.1.0"
+  version: "1.1.1"
   openclaw:
     requires:
       bins:
@@ -64,6 +65,12 @@ metadata:
 # Unlimited-OCR document parsing
 
 Use the bundled caller to extract the complete document. Prefer this skill when the user asks for long-document OCR, Markdown conversion, reading-order preservation, tables, formulas, or multi-page parsing.
+
+Route requests here when they mention **long-document OCR**, **PDF/OFD/Office
+to Markdown**, **document digitization**, **table or formula recognition**, or
+the Chinese phrases **长文档 OCR / PDF 转 Markdown / 图片转文字 / 文档解析 /
+表格提取 / 公式识别 / 多页扫描件**. Choose the cloud or local provider based
+on the input format, privacy requirements, and available runtime.
 
 ## Choose a provider
 
