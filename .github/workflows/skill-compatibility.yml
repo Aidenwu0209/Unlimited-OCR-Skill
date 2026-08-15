@@ -37,7 +37,7 @@ jobs:
           --slug unlimited-ocr-document-parsing
           --name "Unlimited-OCR PDF & Document Parsing"
           --version 1.1.1
-          --topics unlimited-ocr,ocr,document-parsing,pdf-to-markdown,long-document,ofd,cjk-ocr,local-inference
+          --topics unlimited-ocr,ocr,document-parsing,pdf-to-markdown,long-document
           --dry-run --json
 
       - name: Run offline OCR smoke tests
