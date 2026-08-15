@@ -5,5 +5,4 @@
 - Official cloud API: [Document Parsing (Unlimited-OCR)](https://ai.baidu.com/ai-doc/OCR/fmr1p39gb)
 - Upstream model/code license: MIT
 
-This repository does not redistribute model weights, the upstream wheel, or upstream inference code. It provides independently implemented Agent Skill instructions and API clients based on the documented public interfaces. The repository itself is distributed under Apache-2.0.
-
+This repository does not redistribute model weights, the upstream wheel, or upstream inference code. It provides independently implemented Agent Skill instructions and API clients based on the documented public interfaces. The repository itself is distributed under Apache-2.0. The independently distributable `skills/unlimited-ocr-document-parsing` bundle is additionally released under MIT-0 so it can be published through ClawHub.

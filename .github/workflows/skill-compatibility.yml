@@ -1,0 +1,50 @@
+name: Skill compatibility
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Validate Agent Skills specification
+        run: >-
+          uvx --from
+          git+https://github.com/agentskills/agentskills#subdirectory=skills-ref
+          skills-ref validate ./skills/unlimited-ocr-document-parsing
+
+      - name: Verify skills CLI discovery
+        run: npx -y skills@1.5.22 add . --list
+
+      - name: Verify ClawHub package plan
+        run: >-
+          npx -y clawhub@0.23.3 skill publish
+          ./skills/unlimited-ocr-document-parsing
+          --slug unlimited-ocr-document-parsing
+          --name "Unlimited-OCR Document Parsing"
+          --version 1.1.0 --dry-run --json
+
+      - name: Run offline OCR smoke tests
+        run: |
+          uv run skills/unlimited-ocr-document-parsing/scripts/smoke_test.py
+          python -m compileall -q skills
+
+      - name: Validate JSON manifests
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('.claude-plugin/plugin.json'))"
+          node -e "JSON.parse(require('fs').readFileSync('.claude-plugin/marketplace.json'))"
+
